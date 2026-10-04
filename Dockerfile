@@ -5,11 +5,8 @@ WORKDIR /app
 COPY . .
 
 RUN chmod +x gradlew
-RUN ./gradlew build -x test --no-daemon
-
-# ✅ Toma el archivo .jar más reciente y lo renombra
-RUN ls -t build/libs/*.jar | head -n 1 | xargs -I {} cp {} app.jar
+RUN ./gradlew bootJar -x test --no-daemon
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "build/libs/crud-0.0.1-SNAPSHOT.jar"]
