@@ -7,7 +7,8 @@ COPY . .
 RUN chmod +x gradlew
 RUN ./gradlew build -x test --no-daemon
 
-RUN cp build/libs/*.jar app.jar
+# ✅ Toma el archivo .jar más reciente y lo renombra
+RUN ls -t build/libs/*.jar | head -n 1 | xargs -I {} cp {} app.jar
 
 EXPOSE 8080
 
