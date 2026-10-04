@@ -1,6 +1,7 @@
 package com.practica.crud.model;
 
 import jakarta.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "reval")
@@ -16,18 +17,19 @@ public class Reval {
     @Column(nullable = false, length = 100)
     private String nombreActivo;
 
+    // ✅ Cambiado a BigDecimal → SÍ permite precision y scale
     @Column(nullable = false, precision = 12, scale = 2)
-    private Double montoAnterior;
+    private BigDecimal montoAnterior;
 
     @Column(nullable = false, precision = 12, scale = 2)
-    private Double montoActual;
+    private BigDecimal montoActual;
 
     @Column(length = 10)
     private String mesProceso;
 
     private boolean vigente = true;
 
-    // Getters y Setters
+    // Getters y Setters actualizados
     public Long getCodigo() { return codigo; }
     public void setCodigo(Long codigo) { this.codigo = codigo; }
 
@@ -37,11 +39,11 @@ public class Reval {
     public String getNombreActivo() { return nombreActivo; }
     public void setNombreActivo(String nombreActivo) { this.nombreActivo = nombreActivo; }
 
-    public Double getMontoAnterior() { return montoAnterior; }
-    public void setMontoAnterior(Double montoAnterior) { this.montoAnterior = montoAnterior; }
+    public BigDecimal getMontoAnterior() { return montoAnterior; }
+    public void setMontoAnterior(BigDecimal montoAnterior) { this.montoAnterior = montoAnterior; }
 
-    public Double getMontoActual() { return montoActual; }
-    public void setMontoActual(Double montoActual) { this.montoActual = montoActual; }
+    public BigDecimal getMontoActual() { return montoActual; }
+    public void setMontoActual(BigDecimal montoActual) { this.montoActual = montoActual; }
 
     public String getMesProceso() { return mesProceso; }
     public void setMesProceso(String mesProceso) { this.mesProceso = mesProceso; }

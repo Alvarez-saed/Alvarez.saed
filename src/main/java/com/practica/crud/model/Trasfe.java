@@ -1,6 +1,7 @@
 package com.practica.crud.model;
 
 import jakarta.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "trasfe")
@@ -19,15 +20,16 @@ public class Trasfe {
     @Column(nullable = false, length = 100)
     private String destino;
 
+    // ✅ Cambiado a BigDecimal
     @Column(nullable = false, precision = 12, scale = 2)
-    private Double montoMovimiento;
+    private BigDecimal montoMovimiento;
 
     @Column(length = 10)
     private String fechaOperacion;
 
     private boolean confirmado = false;
 
-    // Getters y Setters
+    // Getters y Setters actualizados
     public Long getCodigo() { return codigo; }
     public void setCodigo(Long codigo) { this.codigo = codigo; }
 
@@ -40,8 +42,8 @@ public class Trasfe {
     public String getDestino() { return destino; }
     public void setDestino(String destino) { this.destino = destino; }
 
-    public Double getMontoMovimiento() { return montoMovimiento; }
-    public void setMontoMovimiento(Double montoMovimiento) { this.montoMovimiento = montoMovimiento; }
+    public BigDecimal getMontoMovimiento() { return montoMovimiento; }
+    public void setMontoMovimiento(BigDecimal montoMovimiento) { this.montoMovimiento = montoMovimiento; }
 
     public String getFechaOperacion() { return fechaOperacion; }
     public void setFechaOperacion(String fechaOperacion) { this.fechaOperacion = fechaOperacion; }

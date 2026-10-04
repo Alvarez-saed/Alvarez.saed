@@ -1,14 +1,21 @@
 package com.practica.crud.dto;
 
+import java.math.BigDecimal;
+
 public class TrasfeDTO {
+
     private Long codigo;
     private String claveTraslado;
     private String origen;
     private String destino;
-    private Double montoMovimiento;
+
+    // ✅ Cambiado a BigDecimal
+    private BigDecimal montoMovimiento;
+
     private String fechaOperacion;
     private boolean confirmado;
 
+    // Getters y Setters
     public Long getCodigo() { return codigo; }
     public void setCodigo(Long codigo) { this.codigo = codigo; }
 
@@ -21,8 +28,8 @@ public class TrasfeDTO {
     public String getDestino() { return destino; }
     public void setDestino(String destino) { this.destino = destino; }
 
-    public Double getMontoMovimiento() { return montoMovimiento; }
-    public void setMontoMovimiento(Double montoMovimiento) { this.montoMovimiento = montoMovimiento; }
+    public BigDecimal getMontoMovimiento() { return montoMovimiento; }
+    public void setMontoMovimiento(BigDecimal montoMovimiento) { this.montoMovimiento = montoMovimiento; }
 
     public String getFechaOperacion() { return fechaOperacion; }
     public void setFechaOperacion(String fechaOperacion) { this.fechaOperacion = fechaOperacion; }

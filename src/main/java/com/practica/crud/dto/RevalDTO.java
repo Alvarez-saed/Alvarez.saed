@@ -1,14 +1,21 @@
 package com.practica.crud.dto;
 
+import java.math.BigDecimal;
+
 public class RevalDTO {
+
     private Long codigo;
     private String claveRevalorizacion;
     private String nombreActivo;
-    private Double montoAnterior;
-    private Double montoActual;
+
+    // ✅ Cambiado a BigDecimal
+    private BigDecimal montoAnterior;
+    private BigDecimal montoActual;
+
     private String mesProceso;
     private boolean vigente;
 
+    // Getters y Setters
     public Long getCodigo() { return codigo; }
     public void setCodigo(Long codigo) { this.codigo = codigo; }
 
@@ -18,11 +25,11 @@ public class RevalDTO {
     public String getNombreActivo() { return nombreActivo; }
     public void setNombreActivo(String nombreActivo) { this.nombreActivo = nombreActivo; }
 
-    public Double getMontoAnterior() { return montoAnterior; }
-    public void setMontoAnterior(Double montoAnterior) { this.montoAnterior = montoAnterior; }
+    public BigDecimal getMontoAnterior() { return montoAnterior; }
+    public void setMontoAnterior(BigDecimal montoAnterior) { this.montoAnterior = montoAnterior; }
 
-    public Double getMontoActual() { return montoActual; }
-    public void setMontoActual(Double montoActual) { this.montoActual = montoActual; }
+    public BigDecimal getMontoActual() { return montoActual; }
+    public void setMontoActual(BigDecimal montoActual) { this.montoActual = montoActual; }
 
     public String getMesProceso() { return mesProceso; }
     public void setMesProceso(String mesProceso) { this.mesProceso = mesProceso; }
