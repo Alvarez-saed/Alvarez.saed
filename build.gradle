@@ -35,9 +35,8 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
-springBoot {
-    mainClass.set("com.practica.crud.CrudApplication")
-}
+
+// ✅ Configuración correcta (una sola vez)
 springBoot {
     mainClass.set("com.practica.crud.CrudApplication")
 }
