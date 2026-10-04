@@ -38,3 +38,12 @@ tasks.named('test') {
 springBoot {
     mainClass.set("com.practica.crud.CrudApplication")
 }
+springBoot {
+    mainClass.set("com.practica.crud.CrudApplication")
+}
+
+bootJar {
+    manifest {
+        attributes 'Main-Class': 'com.practica.crud.CrudApplication'
+    }
+}
