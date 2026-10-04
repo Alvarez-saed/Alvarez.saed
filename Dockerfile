@@ -2,10 +2,7 @@ FROM eclipse-temurin:21-jdk-jammy
 
 WORKDIR /app
 
-COPY gradlew .
-COPY gradle ./gradle
-COPY build.gradle .
-COPY settings.gradle .
+COPY . .
 
 RUN chmod +x gradlew
 RUN ./gradlew build -x test --no-daemon
